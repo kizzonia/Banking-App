@@ -62,6 +62,15 @@ body{
     padding-right: 5px;
   }
 }
+
+@media (max-width: 1199px) {
+  .bottom-nav{
+    display: none;
+  }
+}
+// nave bar and responsive nav bar done and dusted
+
+//starts btn edits 
 .btn-cta{
   background: #c94c06;
   color:#fff !important;
