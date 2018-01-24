@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: sunnyapp_production
-  username: sunnyapp
-  password: <%= ENV['SUNNYAPP_DATABASE_PASSWORD'] %>
+  database: sunnybank_production
+  username: sunnybank
+  password: <%= ENV['SUNNYBANK_DATABASE_PASSWORD'] %>
