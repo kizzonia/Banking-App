@@ -20,7 +20,7 @@ gem 'sitemap_generator'
 gem 'carrierwave'
 gem "mini_magick"
 gem "fog-aws"
-gem 'pg'
+gem 'pg', '~> 1.0.0'
 # gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
@@ -39,7 +39,7 @@ group :development do
   gem 'web-console', '>= 3.3.0'
 end
 group :production do
-  gem 'pg'
+  gem 'pg', '~> 1.0.0'
   gem 'rails_12factor'
   gem 'mail_form'
 
