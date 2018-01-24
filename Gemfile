@@ -20,6 +20,7 @@ gem 'sitemap_generator'
 gem 'carrierwave'
 gem "mini_magick"
 gem "fog-aws"
+gem 'pg'
 # gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
