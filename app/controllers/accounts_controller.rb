@@ -1,5 +1,6 @@
 class AccountsController < InheritedResources::Base
 layout "account"
+
 before_action :find_account, only: [ :show, :edit, :update, :destroy]
 before_action :authenticate_user!
 def index

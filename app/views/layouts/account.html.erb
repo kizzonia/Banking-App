@@ -13,31 +13,20 @@
   <meta property="og:site_name" content="SunTrust"/>
   <meta property="og:fb:app_id" content="fb"/>
 <link href="https://fonts.googleapis.com/css?family=Montserrat|Titillium+Web|Ubuntu" rel="stylesheet">
-    <%= stylesheet_link_tag    'account', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'accounts', media: 'all', 'data-turbolinks-track': 'reload' %>
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= render "home/headermenu" %>
-    <% if notice %>
-    <div class="container" style="position:absolute; top:100px; left:210px; z-index:10;">
-      <div class="col-md-8 col-md-offset-2">
-    <div class="alert alert-success fade in">
-       <a href="#" class="close" data-dismiss="alert">&times;</a>
-      <p><%= notice %> </p>
-    </div>
-  </div>
-      </div>
-      <% elsif alert %>
-      <div class="container">
-        <div class="col-md-8 col-md-offset-2">
-          <div class="alert alert-danger fade in">
-             <a href="#" class="close" data-dismiss="alert">&times;</a>
-            <p><%= alert %></p>
-          </div>
-        </div>
-      </div>
-          <% end %>
+    <div class="wrapper">
+
+      <%= render "shared/account_menu" %>
+      <%= render "shared/menu" %>
+
+
     <%= yield %>
+
+      </div>
   </body>
 </html>

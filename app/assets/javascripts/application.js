@@ -14,3 +14,9 @@
 //= require bootstrap
 //= require rails-ujs
 //= require turbolinks
+//= require bootstrap-checkbox-radio
+//= require chartist.min
+//= require cable
+//= require bootstrap-notify
+//= require paper-dashboard
+//= require demo
