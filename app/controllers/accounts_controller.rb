@@ -1,5 +1,5 @@
 class AccountsController < InheritedResources::Base
-layout "account"
+layout "account", except: [:new]
 
 before_action :find_account, only: [ :show, :edit, :update, :destroy]
 before_action :authenticate_user!

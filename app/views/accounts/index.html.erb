@@ -180,4 +180,27 @@
 
 <% else %>
 
+      <div class="container">
+        <div class="col-md-8 col-md-offset-2" style="margin-top:120px;">
+
+          <div class="card">
+            <div class="row">
+              <div class="col-md-8 col-md-offset-2">
+                <%= image_tag "logo.png" %>
+              </div>
+            </div>
+
+            <div class="card-title">
+              <h3 class="text-center"> Enroll  Account </h3>
+            </div>
+
+            <div class="card-body">
+              <div class="text-center" style="padding-top:20px; padding-bottom:20px;">
+                <%= link_to "Create Account", new_account_path, class: "btn btn-info btn-fill btn-wd" %>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
   <% end %>

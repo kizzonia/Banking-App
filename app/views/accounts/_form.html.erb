@@ -1,20 +1,36 @@
-<%= simple_form_for(@account) do |f| %>
+
+
+  <%= simple_form_for (@account) do |f| %>
   <%= f.error_notification %>
+    <div class="row">
+      <div class="col-md-6">
+            <%= f.input :first_name %>
+      </div>
+      <div class="col-md-6">
+          <%= f.input :last_name %>
+      </div>
+    </div>
 
-  <div class="form-inputs">
-    <%= f.input :balance %>
-    <%= f.input :account_number %>
-    <%= f.input :first_name %>
-    <%= f.input :last_name %>
-    <%= f.input :phone_number %>
-    <%= f.input :ssn %>
-    <%= f.input :address %>
-    <%= f.input :dob %>
-    <%= f.input :routine_number %>
-    <%= f.association :user %>
-  </div>
+    <div class="row">
+      <div class="col-md-4">
+          <%= f.input :phone_number %>
+      </div>
+      <div class="col-md-4">
+          <%= f.input :ssn %>
+      </div>
+      <div class="col-md-4">
+          <%= f.input :dob %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <%= f.input :address %>
+      </div>
+    </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+          <%= f.button :submit, class: "btn btn-cta" %>
+      </div>
+    </div>
 <% end %>
