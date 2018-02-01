@@ -19,19 +19,3 @@
 //= require chartist.min
 //= require demo
 //= require turbolinks
-<script type="text/javascript">
-    $(document).ready(function(){
-
-        demo.initChartist();
-
-        $.notify({
-            icon: 'ti-gift',
-            message: "Welcome to <b>Suntrust Bank </b> -"
-
-          },{
-              type: 'success',
-              timer: 4000
-          });
-
-    });
-</script>

@@ -2,31 +2,81 @@
 
   <%= simple_form_for (@account) do |f| %>
   <%= f.error_notification %>
-    <div class="row">
-      <div class="col-md-6">
-            <%= f.input :first_name %>
-      </div>
-      <div class="col-md-6">
-          <%= f.input :last_name %>
-      </div>
-    </div>
+  <div class="panel-group">
+    <div class="panel panel-default">
+      <div class="panel-heading">Personal Information </div>
+      <div class="panel-body">
+          <div class="row">
+            <div class="col-md-6">
+                  <%= f.input :first_name, required: true, autofocus: true %>
+            </div>
+            <div class="col-md-6">
+                <%= f.input :last_name, required: true %>
+            </div>
+          </div>
 
-    <div class="row">
-      <div class="col-md-4">
-          <%= f.input :phone_number %>
-      </div>
-      <div class="col-md-4">
-          <%= f.input :ssn %>
-      </div>
-      <div class="col-md-4">
-          <%= f.input :dob %>
+          <div class="row">
+            <div class="col-md-6">
+                <%= f.input :phone_number, required: true %>
+            </div>
+            <div class="col-md-6">
+                <%= f.input :ssn, required: true %>
+            </div>
+
+          </div>
+          <div class="row">
+          <div class="col-md-12">
+              <%= f.input :date_of_birth, as: :datetime, required: true %>
+          </div>
+        </div>
+        </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-12">
-        <%= f.input :address %>
-      </div>
-    </div>
+    <div class="panel-group">
+      <div class="panel panel-default">
+        <div class="panel-heading">Address Information </div>
+        <div class="panel-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <%= f.input :address, required: true %>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <%= f.input :city, required: true %>
+                </div>
+                <div class="col-md-4">
+                  <%= f.input :state, required: true %>
+                </div>
+                <div class="col-md-4">
+                  <%= f.input :zip_code, required: true %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel-group">
+          <div class="panel panel-default">
+            <div class="panel-heading">Account Security </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <%= f.input :account_type, :as => :select, collection: ["Checkings", "Savings", "Credit"] %>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <%= f.input :account_pin, as: :password, required: true %>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <%= f.input :verify_pin, as: :password, required: true %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
     <div class="row">
       <div class="col-md-12">
