@@ -45,7 +45,7 @@ end
 #  end
   private
   def find_account
-    @account = Account.find(params[:id])
+    @account = Account.friendly.find(params[:id])
   end
     def account_params
       params.require(:account).permit(:balance, :account_number, :first_name, :last_name, :phone_number, :ssn, :address, :dob, :routine_number, :user_id, :date_of_birth, :slug, :city, :zip_code, :country, :account_type, :account_pin, :verify_pin, :state)
