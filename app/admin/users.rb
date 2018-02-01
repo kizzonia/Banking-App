@@ -5,6 +5,10 @@ ActiveAdmin.register User do
 # permit_params :list, :of, :attributes, :on, :model
 #
 # or
+def display_name
+  self.email
+end
+permit_params :email, :password, :password_confirmation, :user_id
 #
 # permit_params do
 #   permitted = [:permitted, :attributes]

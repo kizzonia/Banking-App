@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180129093259) do
+ActiveRecord::Schema.define(version: 20180201010133) do
 
   create_table "accounts", force: :cascade do |t|
     t.decimal "balance"
@@ -25,6 +25,16 @@ ActiveRecord::Schema.define(version: 20180129093259) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "date_of_birth"
+    t.string "slug"
+    t.string "city"
+    t.integer "zip_code"
+    t.string "country"
+    t.string "account_type"
+    t.integer "account_pin"
+    t.integer "verify_pin"
+    t.string "image"
+    t.index ["slug"], name: "index_accounts_on_slug", unique: true
     t.index ["user_id"], name: "index_accounts_on_user_id"
   end
 
