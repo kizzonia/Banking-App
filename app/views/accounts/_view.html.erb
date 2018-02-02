@@ -4,25 +4,25 @@
     <div class="panel-body">
         <div class="row">
           <div class="col-md-6">
-              First Name:  <%= @account.first_name %>
+          <p><strong>First Name: </strong><%= @account.first_name %></p>
           </div>
           <div class="col-md-6">
-            Last Name  <%= @account.last_name  %>
+            <p><strong> Last Name: </strong><%= @account.last_name  %></p>
           </div>
         </div>
 
         <div class="row">
           <div class="col-md-6">
-              Phone Number <%= @account.phone_number  %>
+            <p><strong>Phone Number: </strong> <%= @account.phone_number  %></p>
           </div>
           <div class="col-md-6">
-          SSN:    <%= @account.ssn  %>
+          <p><strong>SSN:</strong> <%= @account.ssn  %></p>
           </div>
 
         </div>
         <div class="row">
         <div class="col-md-12">
-        DOB:<%= @account.date_of_birth  %>
+      <p><strong> DOB: </strong><%= @account.date_of_birth  %></p>
         </div>
       </div>
 
@@ -35,18 +35,18 @@
       <div class="panel-body">
             <div class="row">
               <div class="col-md-12">
-              Home Address  <%= @account.address %>
+            <p><strong> Home Address:</strong> <%= @account.address %> </p>
               </div>
             </div>
             <div class="row">
               <div class="col-md-4">
-              City:  <%= @account.city  %>
+        <p><strong>City:</strong> <%= @account.city  %> </p>
               </div>
               <div class="col-md-4">
-              State:  <%= @account.state  %>
+          <p><strong> State:</strong> <%= @account.state  %></p>
               </div>
               <div class="col-md-4">
-            Zip-Code:    <%= @account.zip_code  %>
+          <p><strong> Zip-Code:</strong> <%= @account.zip_code  %> </p>
               </div>
             </div>
           </div>
@@ -58,12 +58,12 @@
           <div class="panel-body">
             <div class="row">
               <div class="col-md-12">
-              Account Type:<%= @account.account_type%>
+            <p><strong>  Account Type:</strong><%= @account.account_type%> </p>
               </div>
             </div>
             <div class="row">
               <div class="col-md-12">
-            Account Pin:<%= @account.account_pin %>
+          <p><strong>  Account Pin: </strong><%= @account.account_pin %></p>
               </div>
             </div>
 
@@ -73,6 +73,6 @@
 
   <div class="row">
     <div class="col-md-12">
-        <%= link_to "Edit Profile", edit_account_path(@account), class: "btn btn-primary" %>
+        <%= link_to "Edit Profile", edit_account_path(@account), class: "btn btn-primary text-center" %>
     </div>
   </div>

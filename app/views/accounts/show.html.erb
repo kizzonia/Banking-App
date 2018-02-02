@@ -30,7 +30,7 @@
           <div class="text-center">
             <div class="row">
               <div class="col-md-8 col-md-offset-1">
-                <h5>  <%= @account.ssn %><br /><small>SSN</small></h5>
+                <h5>  Welcome</h5>
               </div>
 
             </div>
@@ -45,12 +45,12 @@
               <div class="content">
                 <div class="row">
 
-                  <div class="col-xs-5">
+                  <div class="col-md-3">
                     <div class="icon-big icon-warning text-center">
                       <i class="ti-pin-alt"></i>
                     </div>
                   </div>
-                  <div class="col-xs-7">
+                  <div class="col-md-9">
                     <div class="numbers">
                       <p>Acount Number</p>
                       <%= @account.account_number%>
@@ -74,12 +74,12 @@
                 <div class="content">
                   <div class="row">
 
-                    <div class="col-xs-5">
+                    <div class="col-md-3">
                       <div class="icon-big icon-warning text-center">
                         <i class="ti-pin-alt"></i>
                       </div>
                     </div>
-                    <div class="col-xs-7">
+                    <div class="col-md-9">
                       <div class="numbers">
                         <p>Account Type</p>
                         <%= @account.account_type%>
@@ -102,12 +102,12 @@
                 <div class="content">
                   <div class="row">
 
-                    <div class="col-xs-5">
+                    <div class="col-md-3">
                       <div class="icon-big icon-warning text-center">
                         <i class="ti-pin-alt"></i>
                       </div>
                     </div>
-                    <div class="col-xs-7">
+                    <div class="col-md-9">
                       <div class="numbers">
                         <p>Bank Wire</p>
                         Transfer
@@ -126,14 +126,14 @@
             </div>
           </div>
           <div class="row">
-            <div class="card">
+
               <div class="content">
                 <div class="row">
                   <%= render 'accounts/view' %>
                 </div>
               </div>
             </div>
-          </div>
+
         </div>
       </div>
 
