@@ -1,7 +1,7 @@
 class Account < ApplicationRecord
+  mount_uploader :image, ImageUploader
   extend FriendlyId
   friendly_id :account_number, use: :slugged
-  mount_uploader :image, ImageUploader
 
   belongs_to :user
   validates :user, presence: true
