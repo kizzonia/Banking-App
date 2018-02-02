@@ -4,32 +4,28 @@
     <div class="panel-body">
         <div class="row">
           <div class="col-md-6">
-                <%= @account.first_name %>
+              First Name:  <%= @account.first_name %>
           </div>
           <div class="col-md-6">
-              <%= @account :last_name,  %>
+            Last Name  <%= @account.last_name  %>
           </div>
         </div>
 
         <div class="row">
           <div class="col-md-6">
-              <%= @account :phone_number,  %>
+              Phone Number <%= @account.phone_number  %>
           </div>
           <div class="col-md-6">
-              <%= @account :ssn,  %>
+          SSN:    <%= @account.ssn  %>
           </div>
 
         </div>
         <div class="row">
         <div class="col-md-12">
-            <%= @account :date_of_birth, as: :datetime,  %>
+        DOB:    <%= @account.date_of_birth  %>
         </div>
       </div>
-      <div class="row">
-      <div class="col-md-12">
-          <%= @account :image, as: :file,  %>
-      </div>
-    </div>
+
       </div>
     </div>
   </div>
@@ -39,18 +35,18 @@
       <div class="panel-body">
             <div class="row">
               <div class="col-md-12">
-                <%= @account :address,  %>
+              Home Address  <%= @account.address %>
               </div>
             </div>
             <div class="row">
               <div class="col-md-4">
-                <%= @account :city,  %>
+              City:  <%= @account.city  %>
               </div>
               <div class="col-md-4">
-                <%= @account :state,  %>
+              State:  <%= @account.state  %>
               </div>
               <div class="col-md-4">
-                <%= @account :zip_code,  %>
+            Zip-Code:    <%= @account.zip_code  %>
               </div>
             </div>
           </div>
@@ -62,25 +58,21 @@
           <div class="panel-body">
             <div class="row">
               <div class="col-md-12">
-                <%= @account :account_type, :as => :select, collection: ["Checkings", "Savings", "Credit"] %>
+              Account Type:  <%= @account.account_type%>
               </div>
             </div>
             <div class="row">
               <div class="col-md-12">
-                <%= @account :account_pin, as: :password,  %>
+            Account Pin:    <%= @account.account_pin %>
               </div>
             </div>
-            <div class="row">
-              <div class="col-md-12">
-                <%= @account :verify_pin, as: :password,  %>
-              </div>
-            </div>
+
           </div>
         </div>
       </div>
 
   <div class="row">
     <div class="col-md-12">
-        <%= f.button :submit, class: "btn btn-primary" %>
+        <%= link_to "Edit Profile". edit_account_path(@account), class: "btn btn-primary" %>
     </div>
   </div>
