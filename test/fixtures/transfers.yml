@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  account_number: MyString
+  routine_number: MyString
+  account_pin: MyString
+  amount: MyString
+  user_id: 1
+  slug: MyString
+  account: one
+
+two:
+  account_number: MyString
+  routine_number: MyString
+  account_pin: MyString
+  amount: MyString
+  user_id: 1
+  slug: MyString
+  account: two
