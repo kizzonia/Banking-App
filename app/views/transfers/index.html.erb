@@ -19,11 +19,11 @@
                                   <tbody>
                                     <% @account.transfers.each do |t| %>
                                     <tr>
-                                       <td><%= link_to t.id, t  %></td>
+                                       <td><%= t.id %></td>
                                        <td><%= t.transfer_type %></td>
                                        <td><%= t.account_number %></td>
                                        <td><%= t.routine_number %></td>
-                                       <td>$<%= t.ammount%></td>
+                                       <td>$<%= t.amount%></td>
                                      </tr>
                                      <% end %>
                                    </tbody>

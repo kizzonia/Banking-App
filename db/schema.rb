@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180206124056) do
+ActiveRecord::Schema.define(version: 20180206193327) do
 
   create_table "accounts", force: :cascade do |t|
     t.decimal "balance"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20180206124056) do
     t.integer "verify_pin"
     t.string "image"
     t.string "state"
+    t.boolean "confirmed"
     t.index ["slug"], name: "index_accounts_on_slug", unique: true
     t.index ["user_id"], name: "index_accounts_on_user_id"
   end

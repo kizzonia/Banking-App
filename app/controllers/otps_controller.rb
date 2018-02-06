@@ -11,11 +11,9 @@ end
       @transfer = Transfer.find(params[:transfer_id])
       @otp = @transfer.otps.create(otp_params)
       @otp.user_id = current_user.id
-       if @otp.save
-         redirect_to transfer_otp_path(@transfer, @otp)
-       else
-         render "new"
-       end
+
+         redirect_to root_path, notice: "transfer successfully confirmed and in progress"
+
     end
 
     private

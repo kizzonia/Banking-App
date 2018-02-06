@@ -113,7 +113,7 @@
                     <div class="col-md-9">
                       <div class="numbers">
                         <p>Transactions</p>
-                        <%= button_tag :new_transfer, id: "trb", class: "btn btn-primary" do %>
+                        <%= link_to account_transfers_path(@account), class: "btn btn-primary" do %>
                           View Transactions
                           <%end%>
                       </div>

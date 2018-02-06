@@ -23,7 +23,11 @@ layout "account"
     @transfer = @account.transfers.create(params[:transfer].permit(:account_number, :routine_number, :amount, :user_id, :account_id, :slug, :otp, :serial_number, :transfer_type, :account_pin, :account_name))
      @transfer.user_id = current_user.id
       if @transfer.save
-        redirect_to account_transfer_path(@account, @transfer)
+        user = User.find_by_id(@account.user_id)
+        account = @account
+        transfer = @transfer
+        TransferMailer.transfer_email(user, account, transfer).deliver
+        redirect_to account_transfer_path(@account, @transfer), notice: "Your OTP has been sent to your email"
       else
         render "new"
       end

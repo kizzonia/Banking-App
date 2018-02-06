@@ -16,6 +16,7 @@ class Account < ApplicationRecord
       length = 8
       self.account_number = SecureRandom.random_number(10000000000)
       self.routine_number = SecureRandom.random_number(100000000)
+      self.confirmed = "false"
     end
   end
 
