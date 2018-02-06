@@ -18,4 +18,5 @@
 //= require paper-dashboard
 //= require chartist.min
 //= require demo
+//= require view
 //= require turbolinks

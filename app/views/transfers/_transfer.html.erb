@@ -1,0 +1,59 @@
+<% if notice %>
+<div class="col-md-8 col-md-offset-2">
+
+
+<div class="alert alert-info alert-with-icon" data-notify="container">
+                              <button type="button" aria-hidden="true" class="close">×</button>
+                              <span data-notify="icon" class="ti-bell"></span>
+                              <span data-notify="message"><%= notice %>.</span>
+                          </div>
+                        </div>
+                          <% end %>
+<div class="content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="row" >
+                <div class="card">
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-xs-5">
+                                <div class="icon-big icon-success text-center">
+                                    <i class="ti-wallet"></i>
+                                </div>
+                            </div>
+                            <div class="col-xs-7">
+                                <div class="numbers">
+
+                                    <p>Transfer</p>
+                                    $<%= @transfer.amount %>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="content">
+                      <div class="row">
+                        <div class="col-xs-5">
+                            <div class="icon-big icon-success text-center">
+                                <i class="ti-arrow-right"></i>
+                            </div>
+                        </div>
+                        <div class="col-xs-7">
+                            <div class="numbers">
+
+                                <p>Account Number:</p>
+                                <%= @transfer.account_number%>
+                                <p> Routine_number:</p>
+                                <small><%= @transfer.routine_number%></small>
+
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>

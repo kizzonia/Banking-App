@@ -12,6 +12,8 @@ end
 
 def new
   @account = current_user.accounts.build
+  #@account.transfers.build
+
 end
 
 def create

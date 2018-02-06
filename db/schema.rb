@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180202214947) do
+ActiveRecord::Schema.define(version: 20180206124056) do
 
   create_table "accounts", force: :cascade do |t|
     t.decimal "balance"
@@ -70,6 +70,15 @@ ActiveRecord::Schema.define(version: 20180202214947) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
+  create_table "otps", force: :cascade do |t|
+    t.string "otp"
+    t.integer "user_id"
+    t.integer "transfer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["transfer_id"], name: "index_otps_on_transfer_id"
+  end
+
   create_table "transfers", force: :cascade do |t|
     t.string "account_number"
     t.string "routine_number"
@@ -80,6 +89,10 @@ ActiveRecord::Schema.define(version: 20180202214947) do
     t.integer "account_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "otp"
+    t.string "serial_number"
+    t.string "account_name"
+    t.string "transfer_type"
     t.index ["account_id"], name: "index_transfers_on_account_id"
     t.index ["slug"], name: "index_transfers_on_slug"
   end
