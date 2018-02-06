@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  resources :accounts
+
+
+  resources :accounts do
+    resources :transfers do
+      resources :otps
+    end
+  end
   resources :pages, only: [:show]
   devise_for :users
   devise_for :admin_users, ActiveAdmin::Devise.config

@@ -2,8 +2,9 @@ class Account < ApplicationRecord
   mount_uploader :image, ImageUploader
   extend FriendlyId
   friendly_id :account_number, use: :slugged
-
+  #  accepts_nested_attributes_for :transfers
   belongs_to :user
+  has_many :transfers, dependent: :destroy
   validates :user, presence: true
   validates :balance, presence: true
   before_validation :load_defaults

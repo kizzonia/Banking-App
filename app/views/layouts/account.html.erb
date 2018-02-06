@@ -23,7 +23,17 @@
 
       <%= render "shared/account_menu" %>
       <%= render "shared/menu" %>
+      <% if notice %>
+      <div class="col-md-8 col-md-offset-2">
 
+
+      <div class="alert alert-info alert-with-icon" data-notify="container">
+                                    <button type="button" aria-hidden="true" class="close">×</button>
+                                    <span data-notify="icon" class="ti-bell"></span>
+                                    <span data-notify="message"><%= notice %>.</span>
+                                </div>
+                              </div>
+                                <% end %>
 
     <%= yield %>
 

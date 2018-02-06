@@ -8,7 +8,7 @@ ActiveAdmin.register User do
 def display_name
   self.email
 end
-permit_params :email, :password, :password_confirmation, :user_id
+permit_params :email, :password, :password_confirmation, :user_id, :balance
 #
 # permit_params do
 #   permitted = [:permitted, :attributes]

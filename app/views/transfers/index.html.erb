@@ -1,0 +1,36 @@
+<div class="content">
+          <div class="container-fluid">
+              <div class="row">
+                  <div class="col-md-12">
+                      <div class="card">
+                          <div class="header">
+                              <h4 class="title">Account History</h4>
+                              <p class="category"></p>
+                          </div>
+                          <div class="content table-responsive table-full-width">
+                              <table class="table table-striped">
+                                  <thead>
+                                      <th>ID</th>
+                                    <th>Type</th>
+                                    <th>Account Number</th>
+                                    <th>Routine</th>
+                                    <th>Amount</th>
+                                  </thead>
+                                  <tbody>
+                                    <% @account.transfers.each do |t| %>
+                                    <tr>
+                                       <td><%= link_to t.id, t  %></td>
+                                       <td><%= t.transfer_type %></td>
+                                       <td><%= t.account_number %></td>
+                                       <td><%= t.routine_number %></td>
+                                       <td>$<%= t.ammount%></td>
+                                     </tr>
+                                     <% end %>
+                                   </tbody>
+                                 </table>
+                               </div>
+                             </div>
+                           </div>
+                         </div>
+                       </div>
+                     </div>

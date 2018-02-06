@@ -26,7 +26,7 @@
           </div>
           <div class="row">
           <div class="col-md-12">
-              <%= f.input :date_of_birth, as: :datetime, required: true %>
+              <%= f.input :date_of_birth, as: :date, :start_year => 1910, :end_year => 2010, required: true %>
           </div>
         </div>
         <div class="row">

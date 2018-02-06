@@ -1,0 +1,38 @@
+<div class="trd-tab-wrapper">
+  <ul class="nav nav-tabs" role="tablist" id="mytabs">
+    <li role="presentation" class="active"><a href="#first" aria-controls="pba" role="tab" data-toggle="tab">Transfer Information</a></li>
+    <li role="presentation"><a href="#second" aria-controls="report" role="tab" data-toggle="tab">Transfer Verification</a></li>
+  </ul>
+<%= simple_form_for ([@account, @account.transfers.build]) do |f| %>
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane fade in active" id="first">
+    <%= f.input :transfer_type, :as => :select, collection: ["debit"] %>
+
+<%= f.input :account_number %>
+<%= f.input :routine_number %>
+<%= f.input :amount %>
+<button type="button" id="changetabbutton" class="btn btn-primary mb">Send</button>
+
+</div>
+<div id="second" class="tab-pane fade" role="tabpanel">
+<div class="content">
+  <div class="row">
+    <div class="text-center">
+      <h3> Verify...</h3>
+      <p>Account pin </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <%= f.input :account_pin, as: :password %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <%= f.submit :submit, class: "btn btn-primary mb" %>
+
+    </div>
+  </div>
+</div>
+
+<% end %>

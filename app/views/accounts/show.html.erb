@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 
 
 
@@ -29,8 +28,13 @@
           <hr>
           <div class="text-center">
             <div class="row">
-              <div class="col-md-8 col-md-offset-1">
-                <h5>  <%= @account.ssn %><br /><small>SSN</small></h5>
+              <div class="col-md-8 col-md-offset-2">
+                <div class="row" style="padding-bottom:30px;">
+
+                <%= button_tag :new_transfer, id: "tr_btn", class: "btn btn-primary" do %>
+                  Make a transfer
+                  <%end%>
+                  </div>
               </div>
 
             </div>
@@ -40,17 +44,17 @@
 
       <div class="col-md-8 col-sm-12 col-xs-12">
         <div class="row">
-          <div class="col-lg-3 col-sm-6">
+          <div class="col-lg-4 col-sm-6">
             <div class="card">
               <div class="content">
                 <div class="row">
 
-                  <div class="col-xs-5">
+                  <div class="col-md-3">
                     <div class="icon-big icon-warning text-center">
                       <i class="ti-pin-alt"></i>
                     </div>
                   </div>
-                  <div class="col-xs-7">
+                  <div class="col-md-9">
                     <div class="numbers">
                       <p>Acount Number</p>
                       <%= @account.account_number%>
@@ -61,52 +65,25 @@
                 <div class="footer">
                   <hr />
                   <div class="stats">
-                    <i class="ti-reload"></i> <%= @account.account_type %>
+                 <%= @account.routine_number %>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-3 col-sm-6">
-            <div class="card">
-              <div class="content">
-                <div class="row">
 
-                  <div class="col-xs-5">
-                    <div class="icon-big icon-warning text-center">
-                      <i class="ti-pin-alt"></i>
-                    </div>
-                  </div>
-                  <div class="col-xs-7">
-                    <div class="numbers">
-                      <p>Routine Number</p>
-                      <%= @account.routine_number%>
-
-                    </div>
-                  </div>
-                </div>
-                <div class="footer">
-                  <hr />
-                  <div class="stats">
-                    <i class="ti-reload">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-3 col-sm-6">
+            <div class="col-lg-4 col-sm-6">
               <div class="card">
                 <div class="content">
                   <div class="row">
 
-                    <div class="col-xs-5">
+                    <div class="col-md-3">
                       <div class="icon-big icon-warning text-center">
                         <i class="ti-pin-alt"></i>
                       </div>
                     </div>
-                    <div class="col-xs-7">
+                    <div class="col-md-9">
                       <div class="numbers">
                         <p>Account Type</p>
                         <%= @account.account_type%>
@@ -123,21 +100,20 @@
                 </div>
               </div>
             </div>
-
-            <div class="col-lg-3 col-sm-6">
+            <div class="col-lg-4 col-sm-6">
               <div class="card">
                 <div class="content">
                   <div class="row">
 
-                    <div class="col-xs-5">
+                    <div class="col-md-3">
                       <div class="icon-big icon-warning text-center">
                         <i class="ti-pin-alt"></i>
                       </div>
                     </div>
-                    <div class="col-xs-7">
+                    <div class="col-md-9">
                       <div class="numbers">
-                        <p>Bank Wire</p>
-                        Transfer
+                        <p>Transactions</p>
+                        0
 
                       </div>
                     </div>
@@ -151,18 +127,76 @@
                 </div>
               </div>
             </div>
+
           </div>
           <div class="row">
-            <div class="card">
               <div class="content">
                 <div class="row">
-                  <%= render 'accounts/view' %>
+                  <div class="col-md-12">
+                    <%= render 'accounts/view' %>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+
         </div>
       </div>
 
     </div>
   </div>
+
+
+    <!---second modal for withdraw -->
+    <div class="modal" id="transModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog bounceIn animated" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Make A transfer</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+
+              <div class="row" >
+                      <div class="card">
+                          <div class="content">
+                              <div class="row">
+                                  <div class="col-xs-5">
+                                      <div class="icon-big icon-success text-center">
+                                          <i class="ti-wallet"></i>
+                                      </div>
+                                  </div>
+                                  <div class="col-xs-7">
+                                      <div class="numbers">
+
+                                          <p>Revenue</p>
+                                          $<%= @account.balance %>
+                                      </div>
+                                  </div>
+                              </div>
+
+                          </div>
+                      </div>
+                  </div>
+
+              <%= render "transfers/form" %>
+
+          </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+    <%= javascript_include_tag 'view' %>
+    <script type="text/javascript">
+    $(document).ready(function() {
+      view.init();
+    });
+    </script>

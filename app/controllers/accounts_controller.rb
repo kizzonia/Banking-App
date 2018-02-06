@@ -12,14 +12,16 @@ end
 
 def new
   @account = current_user.accounts.build
+  #@account.transfers.build
+
 end
 
 def create
   @account = current_user.accounts.build(account_params)
   if @account.save
-    #user = User.find_by_id(@account.user_id)
-    #account = @account
-    #AccountMailer.account_email(user, account).deliver
+    user = User.find_by_id(@account.user_id)
+    account = @account
+    AccountMailer.account_email(user, account).deliver_later
     redirect_to @account, notice: "Account Successfully Created"
   else
     render 'new'
