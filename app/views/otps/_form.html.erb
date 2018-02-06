@@ -1,0 +1,4 @@
+<%= simple_form_for ([@account, @transfer, @transfer.otps.build]) do |f| %>
+<%= f.input :otp %>
+<%= f.submit :submit, class: "btn btn-primary" %>
+<% end %>

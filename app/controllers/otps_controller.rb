@@ -3,17 +3,19 @@ class OtpsController < ApplicationController
     #before_action :find_Account
     before_action :authenticate_user!
 
+def new
 
+
+end
     def create
-      @account = Account.friendly.find(params[:account_id])
-      @transfer = @account.transfers.find(params[:id])
-
-      @otp = @account.transfer.otps.create(otp_params)
-      if @otp.save
-        redirect_to @account, notice: "Transfer In Progress, OTP has been sent to your email "
-      else
-        render 'new'
-      end
+      @transfer = Transfer.find(params[:transfer_id])
+      @otp = @transfer.otps.create(otp_params)
+      @otp.user_id = current_user.id
+       if @otp.save
+         redirect_to transfer_otp_path(@transfer, @otp)
+       else
+         render "new"
+       end
     end
 
     private

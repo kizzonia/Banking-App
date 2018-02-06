@@ -2,9 +2,13 @@ Rails.application.routes.draw do
 
 
   resources :accounts do
-    resources :transfers do
-      resources :otps
-    end
+    resources :transfers
+
+
+  end
+  resources :transfers do
+    resources :otps
+
   end
   resources :pages, only: [:show]
   devise_for :users

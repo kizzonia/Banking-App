@@ -8,6 +8,7 @@ def index
 end
 
 def show
+      @transfer = @account.transfers.build
 end
 
 def new
